@@ -1,3 +1,8 @@
+/*
+Creating the codegen config
+WARN: move this file on root to prevent errors
+*/
+//update added a context type
 import type { CodegenConfig } from "@graphql-codegen/cli";
 
 const config: CodegenConfig = {
