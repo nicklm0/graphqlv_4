@@ -4,6 +4,8 @@ this api code
 forgot to install the npm install @apollo/datasource-rest
 */
 import { RESTDataSource } from "@apollo/datasource-rest";
+import {Listing } from "../types" //import the listing from the types
+
 
 export class ListingAPI extends RESTDataSource {
     baseURL =  "https://rt-airlock-services-listing.herokuapp.com/";
