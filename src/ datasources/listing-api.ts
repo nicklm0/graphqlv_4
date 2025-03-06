@@ -4,9 +4,7 @@ this api code
 forgot to install the npm install @apollo/datasource-rest
 */
  
-
 //put the import below to the  ListingAPI file
-import { Listing } from "../types";
 import { RESTDataSource } from "@apollo/datasource-rest";
 import { Listing } from "../types";
 
