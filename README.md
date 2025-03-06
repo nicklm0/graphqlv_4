@@ -90,7 +90,6 @@ const resolvers = {
   }
 };
 ```
-
 # Key Takeaways
 - Apollo Server simplifies GraphQL API development with built-in tools and middleware support.
 
@@ -99,4 +98,3 @@ const resolvers = {
 - Mutations and scalars help modify and validate data efficiently.
 
 - GraphQL provides flexibility and reduces over fetching of data, making it a powerful  alternative to REST APIs.
-
