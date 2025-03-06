@@ -16,8 +16,7 @@ const typeDefs = gql(
       encoding: "utf-8",
     })
   );
-
-  /*
+/*
   Next, let's set up an async function called startApolloServer. 
   Inside, we'll create an instance of the ApolloServer 
   class and pass it our typeDefs in its options object:
@@ -30,14 +29,23 @@ const typeDefs = gql(
   so we'll await the results of that call, 
   and pull out the url property from the result.
   */ 
+/*update the server file chunk*/
   async function startApolloServer() {
-    const server = new ApolloServer({ typeDefs });
-    const { url } = await startStandaloneServer(server);
+    const server = new ApolloServer({ typeDefs, resolvers });
+    const { url } = await startStandaloneServer(server, {
+      context: async () => {
+        const { cache } = server;
+        return {
+          dataSources: {
+            listingAPI: new ListingAPI({ cache }),
+          },
+        };
+      },
+    });
     console.log(`
       🚀  Server is running!
       📭  Query at ${url}
     `);
   }
-
-  //put the startApolloServer function at the bottom of the file
+//put the startApolloServer function at the bottom of the file
   startApolloServer();
